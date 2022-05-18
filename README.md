@@ -1,4 +1,34 @@
-# Getting Started with Create React App
+# Getting Started with Create React App with TypeScript
+
+## npm commands
+1. bootstrap react-app with typescript
+   npx create-react-app react-learning-app --template typescript
+
+2. setup api-client [install axios]
+   npm install axios
+
+3. setup react router dom
+   npm install react-router-dom 
+
+[** react-router contains all the common components between react-router-dom and react-router-native.
+   When we are working on the web then we will get our required things from react-router-dom]
+
+4. setup react react-redux
+   npm install redux react-redux
+
+5. setup react rxjs
+   npm install rxjs
+
+6. setup redux-observable
+   npm install redux-observable
+
+7. setup redux-devtools-extension
+   npm install redux-devtools-extension
+
+8. setup connected-react-router
+   npm install connected-react-router
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
