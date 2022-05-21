@@ -5,8 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
 import ReactLearningAppStore from './redux';
-import CustomRouter from './CustomRouter';
-import history from './history';
+import CustomRouter from './router/CustomRouter';
+import history from './router/history';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement

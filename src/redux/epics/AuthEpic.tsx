@@ -2,7 +2,6 @@ import {ofType} from 'redux-observable';
 import {catchError, from, ignoreElements, map, mergeMap, of} from 'rxjs';
 import api from '../../apiClient';
 import {authActions, loginFailed, loginSuccess} from '../actions/AuthAction';
-import history from '../../history';
 
 export const loginRequestEpic = (action$: any, state$: any) => {
     console.log("loginRequestEpic");
@@ -42,7 +41,7 @@ export const loginSuccessEpic = (action$: any, state$: any, {history}: any) => {
     );
 };
 
-export const logoutRequestEpic = (action$: any, state$: any, dependencies: any) => {
+export const logoutRequestEpic = (action$: any, state$: any, {history}: any) => {
     return action$.pipe(
         ofType(authActions.LOGOUT_REQUEST),
         map(() => {
