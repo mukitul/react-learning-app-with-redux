@@ -2,8 +2,10 @@ import {ofType} from 'redux-observable';
 import {catchError, from, ignoreElements, map, mergeMap, of} from 'rxjs';
 import api from '../../apiClient';
 import {authActions, loginFailed, loginSuccess} from '../actions/AuthAction';
+import history from '../../history';
 
 export const loginRequestEpic = (action$: any, state$: any) => {
+    console.log("loginRequestEpic");
     return action$.pipe(
         ofType(authActions.LOGIN_REQUEST),
         mergeMap((action: any) =>
@@ -15,7 +17,7 @@ export const loginRequestEpic = (action$: any, state$: any) => {
             ).pipe(
                 map((response) => {
                     if (response.data.isResult) {
-                        return loginSuccess(response);
+                        return loginSuccess();
                     } else {
                         throw response;
                     }
@@ -32,19 +34,20 @@ export const loginRequestEpic = (action$: any, state$: any) => {
 };
 
 export const loginSuccessEpic = (action$: any, state$: any, {history}: any) => {
+    console.log("loginSuccessEpic");
     return action$.pipe(
         ofType(authActions.LOGIN_SUCCESS),
-        map(() => history.push('/home')),
+        map(() => {history.push("/home");}),
         ignoreElements()
     );
 };
 
-export const logoutRequestEpic = (action$: any, state$: any, {history}: any) => {
+export const logoutRequestEpic = (action$: any, state$: any, dependencies: any) => {
     return action$.pipe(
         ofType(authActions.LOGOUT_REQUEST),
         map(() => {
             //AuthHelper.clearSessionData();
-            history.push('/login');
+            history.push('/home');
         }),
         ignoreElements()
     );

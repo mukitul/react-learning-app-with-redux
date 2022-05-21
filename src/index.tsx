@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
 import ReactLearningAppStore from './redux';
+import CustomRouter from './CustomRouter';
+import history from './history';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -12,7 +14,9 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <Provider store={ReactLearningAppStore()}>
-            <App/>
+            <CustomRouter history={history}>
+                <App/>
+            </CustomRouter>
         </Provider>
     </React.StrictMode>
 );

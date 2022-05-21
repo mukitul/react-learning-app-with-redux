@@ -1,6 +1,15 @@
+import { useDispatch } from "react-redux";
+import { loginSuccess } from "../redux/actions/AuthAction";
+
 const LoginComponent = () =>{
+
+    const dispatch = useDispatch();
+
+    function handleClick(){
+        dispatch(loginSuccess());
+    }
     return(<>
-        Hello from LOGIN PAGE
+        <button onClick={()=>handleClick()}>LOGIN</button>
     </>);
 }
 

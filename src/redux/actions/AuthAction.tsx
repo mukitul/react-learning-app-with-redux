@@ -11,11 +11,10 @@ export const loginRequest = (payload: any) => {
         payload,
     };
 };
-export const loginSuccess = (payload: any) => {
-    console.log(payload);
+export const loginSuccess = () => {
+    console.log("loginSuccess-reducers");
     return {
-        type: authActions.LOGIN_SUCCESS,
-        payload,
+        type: authActions.LOGIN_SUCCESS
     };
 };
 export const loginFailed = (payload: any) => {
