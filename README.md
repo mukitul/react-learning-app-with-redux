@@ -1,4 +1,6 @@
-# Getting Started with Create React App with TypeScript
+# REACT-LEARNING-APP
+
+This is a react-web-app for the purpose of learning and exploring react with `typescript` and `complete redux flow: action-dispatch-reducer-store-epic`
 
 ## npm commands
 1. bootstrap react-app with typescript
@@ -29,7 +31,15 @@
    npm install connected-react-router
 
 
+## Helpful links
+1. https://stackoverflow.com/questions/69953377/react-router-v6-how-to-use-navigate-redirection-in-axios-interceptor/70012117#70012117
 
+2. https://stackoverflow.com/questions/47549245/is-there-a-way-to-access-router-history-from-inside-an-epic-aside
+
+3. https://stackoverflow.com/questions/46679349/is-it-ok-to-change-the-route-programatically-inside-an-epic-in-redux-observable
+
+
+## Getting Started with Create React App with TypeScript
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
