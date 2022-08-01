@@ -1,46 +1,25 @@
-# REACT-LEARNING-APP
+# Getting Started with React-TypeScript App with Redux & Tailwind CSS
 
-This is a react-web-app for the purpose of learning and exploring react with `typescript` and `complete redux flow: action-dispatch-reducer-store-epic`
+### Packages and Installation Command:
+Packages and installation command required for bootstrapping similar project - 
+```
+npx create-react-app your-app-name --template typescript
 
-## npm commands
-1. bootstrap react-app with typescript
-   npx create-react-app react-learning-app --template typescript
+npm install axios
 
-2. setup api-client [install axios]
-   npm install axios
+npm install redux react-redux
 
-3. setup react router dom
-   npm install react-router-dom 
+npm install redux-devtools-extension
 
-[** react-router contains all the common components between react-router-dom and react-router-native.
-   When we are working on the web then we will get our required things from react-router-dom]
+npm install rxjs
 
-4. setup react react-redux
-   npm install redux react-redux
+npm install redux-observable
 
-5. setup react rxjs
-   npm install rxjs
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 
-6. setup redux-observable
-   npm install redux-observable
-
-7. setup redux-devtools-extension
-   npm install redux-devtools-extension
-
-8. setup connected-react-router
-   npm install connected-react-router
-
-
-## Helpful links
-1. https://stackoverflow.com/questions/69953377/react-router-v6-how-to-use-navigate-redirection-in-axios-interceptor/70012117#70012117
-
-2. https://stackoverflow.com/questions/47549245/is-there-a-way-to-access-router-history-from-inside-an-epic-aside
-
-3. https://stackoverflow.com/questions/46679349/is-it-ok-to-change-the-route-programatically-inside-an-epic-in-redux-observable
-
-
-## Getting Started with Create React App with TypeScript
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```
+<!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -83,4 +62,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To learn React, check out the [React documentation](https://reactjs.org/). -->
