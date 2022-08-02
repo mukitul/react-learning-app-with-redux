@@ -11,7 +11,6 @@ export const counterIncrementEpic = (action$: any, state$: any) => {
                 FakeBackendService.getCountryList()
             ).pipe(
                 map((response: any) => {
-                    console.log("ci")
                     if (response) {
                         return incrementAction();
                     } else {
