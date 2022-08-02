@@ -1,8 +1,8 @@
-import counterReducer from "./counterReducer";
+import counterSlice from "./counterSlice";
 
 const rootReducer = () => {
     return {
-        counter: counterReducer
+        counter: counterSlice
     }
 }
 
