@@ -3,16 +3,21 @@ import {createSlice} from '@reduxjs/toolkit'
 
 export interface CounterState {
     value: number
+    isSuccessful: boolean
 }
 
 const initialState: CounterState = {
     value: 0,
+    isSuccessful: false
 }
 
 export const counterSlice = createSlice({
     name: 'counter',
     initialState,
     reducers: {
+        incrementActionRequest: (state: any) => {
+
+        },
         incrementAction: (state: any) => {
             // Redux Toolkit allows us to write "mutating" logic in reducers. It
             // doesn't actually mutate the state because it uses the Immer library,
@@ -20,8 +25,16 @@ export const counterSlice = createSlice({
             // immutable state based off those changes
             state.value += 1
         },
+        incrementActionFailed: (state: any) => {
+        },
+        decrementActionRequest: (state: any) => {
+
+        },
         decrementAction: (state: any) => {
             state.value -= 1
+        },
+        incrementByAmountActionRequest(state: any, action: PayloadAction<number>) {
+
         },
         incrementByAmountAction(state: any, action: PayloadAction<number>) {
             state.value += action.payload
@@ -30,6 +43,14 @@ export const counterSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const {incrementAction, decrementAction, incrementByAmountAction} = counterSlice.actions
+export const {
+    incrementActionRequest,
+    incrementAction,
+    incrementActionFailed,
+    decrementActionRequest,
+    decrementAction,
+    incrementByAmountActionRequest,
+    incrementByAmountAction
+} = counterSlice.actions
 
 export default counterSlice.reducer

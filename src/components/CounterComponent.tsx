@@ -1,5 +1,9 @@
-import { useSelector, useDispatch } from 'react-redux'
-import { incrementAction, decrementAction, incrementByAmountAction } from '../redux-store/reducer/counterSlice'
+import {useDispatch, useSelector} from 'react-redux'
+import {
+    decrementActionRequest,
+    incrementActionRequest,
+    incrementByAmountActionRequest
+} from '../redux-store/reducer/counterSlice'
 
 export function CounterComponent() {
     const count = useSelector((state: any) => state.counter.value);
@@ -10,20 +14,20 @@ export function CounterComponent() {
             <div>
                 <button
                     aria-label="Increment value"
-                    onClick={() => dispatch(incrementAction())}
+                    onClick={() => dispatch(incrementActionRequest())}
                 >
                     Increment
                 </button>
                 <span>{count}</span>
                 <button
                     aria-label="Decrement value"
-                    onClick={() => dispatch(decrementAction())}
+                    onClick={() => dispatch(decrementActionRequest())}
                 >
                     Decrement
                 </button>
                 <button
                     aria-label="Increment By 3 value"
-                    onClick={() => dispatch(incrementByAmountAction(3))}
+                    onClick={() => dispatch(incrementByAmountActionRequest(3))}
                 >
                     Increment By 3
                 </button>
