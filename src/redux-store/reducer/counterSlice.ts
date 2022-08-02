@@ -24,6 +24,7 @@ export const counterSlice = createSlice({
             // which detects changes to a "draft state" and produces a brand new
             // immutable state based off those changes
             state.value += 1
+            state.isSuccessful = true
         },
         incrementActionFailed: (state: any) => {
         },
@@ -32,12 +33,14 @@ export const counterSlice = createSlice({
         },
         decrementAction: (state: any) => {
             state.value -= 1
+            state.isSuccessful = true
         },
         incrementByAmountActionRequest(state: any, action: PayloadAction<number>) {
 
         },
         incrementByAmountAction(state: any, action: PayloadAction<number>) {
             state.value += action.payload
+            state.isSuccessful = true
         },
     },
 })
