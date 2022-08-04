@@ -24,10 +24,7 @@ export default class FakeBackendService {
         return new Promise((resolve, reject) => {
             setTimeout(resolve, 0, responseData);
         }).catch(err => {
-            // let responseData = new LoginResponseDTO(STATUS.FAILED, err)
             throw new Error(err);
         });
-
-        //return api.get(`${ApiEndPoints.SVS_NLL_URL}/api/v1/common/CountryList`);
     };
 }

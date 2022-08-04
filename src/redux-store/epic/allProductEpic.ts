@@ -2,21 +2,21 @@ import {catchError, from, map, mergeMap, of} from "rxjs";
 import {ofType} from "redux-observable";
 import FakeBackendService from "../../service/FakeBackendService";
 import {
-    getAllProductActionFailed,
-    getAllProductActionRequest,
-    getAllProductActionSuccess
+    getAllProductFailedAction,
+    getAllProductRequestAction,
+    getAllProductSuccessAction,
 } from "../reducer/allProductSlice";
 
 export const allProductRequestEpic = (action$: any, state$: any) => {
     return action$.pipe(
-        ofType(getAllProductActionRequest),
+        ofType(getAllProductRequestAction),
         mergeMap((action: any) =>
             from(
                 FakeBackendService.getAllProduct()
             ).pipe(
                 map((response: any) => {
                     if (response.data) {
-                        return getAllProductActionSuccess(response.data);
+                        return getAllProductSuccessAction(response.data);
                     } else {
                         throw response;
                     }
@@ -25,7 +25,7 @@ export const allProductRequestEpic = (action$: any, state$: any) => {
                     let result = {
                         message: err
                     }
-                    return of(getAllProductActionFailed(result));
+                    return of(getAllProductFailedAction(result));
                 })
             )
         )
