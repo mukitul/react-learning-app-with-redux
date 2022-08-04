@@ -1,65 +1,112 @@
 # Getting Started with React-TypeScript App with Redux & Tailwind CSS
 
-### Packages and Installation Command:
-Packages and installation command required for bootstrapping similar project - 
+## How To Run This Project
+
+1. Clone this repository `git clone https://github.com/mukitul/react-learning-app-with-redux.git`
+2. Run `cd react-learning-app-with-redux`
+3. Run `npm ci` [It will install exact version of required libraries and store in node_modules folder]
+4. Run `npm start`
+5. Project will be launch here : [http://localhost:3004](http://localhost:3420)
+
+## FAQ: Difference between `npm install` & `npm ci`
+
+```
+npm ci
+``` 
+
+- This command installs exact version of the dependencies mentioned in the `package-lock.json` file.
+- This command requires the existence of a `package-lock.json` and would print an error if it wasn't there.
+- This command will produce an error when number of dependencies in `package-lock.json` and `package.json` are out of
+  sync.
+
+```
+npm install / npm i
+``` 
+
+- This command installs latest/updated dependencies and overwrite `package.json` and `package-lock.json` file.
+- This unknown behaviour may cause project to run using different version of dependencies across different machines.
+
+
+## Description of Folder Structure
+```text
+src
+|
+|-- api-client (axios setup and intercepting related)
+|
+|-- components (all tsx files i.e. components - layouts,screens,pages,header,footer,)
+|
+|-- environment (production or staging related configuration)
+|
+|-- interface (data-type definition of state/different objects)
+|
+|-- redux-store (redux setup - epic, reducer, store)
+|
+|-- service (api call to backend services)
+|
+|-- utils (helper-functions, constants are here)   
+```
+## How to Create a Similar Project By Yourself
+
+### Step-1: Command for Creating TypeScript-React App
+
 ```
 npx create-react-app your-app-name --template typescript
+```
 
-npm install axios
+### Step-2: Installation Command for Different Packages
 
-npm install redux react-redux
-
-npm install redux-devtools-extension
-
-npm install rxjs
-
-npm install redux-observable
-
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
+Packages and installation command required for bootstrapping similar project -
 
 ```
-<!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+npm install axios
+```
 
-## Available Scripts
+```
+npm install history
+```
 
-In the project directory, you can run:
+```
+npm install redux react-redux
+```
 
-### `npm start`
+```
+npm install redux-devtools-extension
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+npm install rxjs
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+npm install redux-observable
+```
 
-### `npm test`
+```
+npm install @reduxjs/toolkit react-redux
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
 
-### `npm run build`
+Official Guide for Tailwind
+Setup: [https://tailwindcss.com/docs/guides/create-react-app](https://tailwindcss.com/docs/guides/create-react-app)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Step-3: Create Root Reducer
+Example: [rootReducer.ts](./src/redux-store/reducer/rootReducer.ts)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Step-4: Create Root Epic
+Example: [rootEpic.ts](./src/redux-store/epic/rootEpic.ts)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Step-5: Create Redux Store
+Example: [AppReduxStore.ts](./src/redux-store/AppReduxStore.ts)
 
-### `npm run eject`
+### Step-6: Connect Redux-store with App
+Example: [index.tsx](./src/index.tsx)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Step-7: Connect BrowserRouter with App
+Example: [index.tsx](./src/index.tsx)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/). -->
+### Step-8: Setup Routing of different component
+Example: [App.tsx](./src/App.tsx)
