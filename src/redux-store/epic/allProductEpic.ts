@@ -15,8 +15,8 @@ export const allProductRequestEpic = (action$: any, state$: any) => {
                 FakeBackendService.getAllProduct()
             ).pipe(
                 map((response: any) => {
-                    if (response) {
-                        return getAllProductActionSuccess(response);
+                    if (response.data) {
+                        return getAllProductActionSuccess(response.data);
                     } else {
                         throw response;
                     }

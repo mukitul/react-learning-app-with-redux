@@ -10,9 +10,17 @@ export function HomeComponent() {
         dispatch(getAllProductActionRequest());
     }, []);
 
-    console.log("products:", allProductState.products);
     return (<>
-        HOME
+        <div className="grid grid-cols-3 gap-3 p-2">
+            {allProductState.products.map((item: any, index: number) => {
+                return <div className="flex flex-col justify-center items-center hover:cursor-pointer border shadow"
+                            key={index}>
+                    <img className="h-65 w-60" alt="" src={item.image}/>
+                    <span>{`PRICE: ${item.price}`}</span>
+                    <span>{item.title}</span>
+                </div>
+            })}
+        </div>
     </>)
 }
 
