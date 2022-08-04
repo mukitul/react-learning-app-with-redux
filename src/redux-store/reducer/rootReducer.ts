@@ -1,8 +1,10 @@
 import counterSlice from "./counterSlice";
+import allProductSlice from "./allProductSlice";
 
 const rootReducer = () => {
     return {
-        counter: counterSlice
+        counter: counterSlice,
+        allProduct: allProductSlice,
     }
 }
 

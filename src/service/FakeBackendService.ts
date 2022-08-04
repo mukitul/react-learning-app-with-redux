@@ -1,4 +1,10 @@
+import api from "../api-client";
+import {ApiConstants} from "../utils/ApiConstants";
+
 export default class FakeBackendService {
+    static getAllProduct = () => {
+        return api.get(ApiConstants.allProducts);
+    }
     static getCountryList = () => {
         let responseData = {
             "data": {
