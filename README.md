@@ -1,12 +1,24 @@
 # Getting Started with React-TypeScript App with Redux & Tailwind CSS
 
-## OUTLINE
-- [How To Run This Project](#how-to-run-this-project)
-- [Version Notes](#version-notes)
-- [FAQ: Difference between - npm install & npm ci](#faq-difference-between-npm-install--npm-ci)
-- [Description of Folder Structure](#description-of-folder-structure)
-- [How to Create a Similar Project By Yourself](#how-to-create-a-similar-project-by-yourself)
-- [How to Dockerize React App (Coming Soon on My Blog)](https://mukitul-islam.blogspot.com/)
+## CONTENTS
+- [Getting Started with React-TypeScript App with Redux & Tailwind CSS](#getting-started-with-react-typescript-app-with-redux--tailwind-css)
+  - [CONTENTS](#contents)
+  - [How To Run This Project](#how-to-run-this-project)
+  - [Version Notes](#version-notes)
+  - [FAQ: Difference between `npm install` & `npm ci`](#faq-difference-between-npm-install--npm-ci)
+  - [Description of Folder Structure](#description-of-folder-structure)
+  - [Description of Component Rendering Hierarchy](#description-of-component-rendering-hierarchy)
+  - [How to Create a Similar Project By Yourself](#how-to-create-a-similar-project-by-yourself)
+    - [Step-1: Command for Creating TypeScript-React App](#step-1-command-for-creating-typescript-react-app)
+    - [Step-2: Installation Command for Different Packages](#step-2-installation-command-for-different-packages)
+    - [Step-3: Create Root Reducer](#step-3-create-root-reducer)
+    - [Step-4: Create Root Epic](#step-4-create-root-epic)
+    - [Step-5: Create Redux Store](#step-5-create-redux-store)
+    - [Step-6: Connect Redux-store with App](#step-6-connect-redux-store-with-app)
+    - [Step-7: Connect BrowserRouter with App](#step-7-connect-browserrouter-with-app)
+    - [Step-8: Setup Routing of different component](#step-8-setup-routing-of-different-component)
+    - [Step-9: Backend API integration](#step-9-backend-api-integration)
+  - [How to Dockerize React App](#how-to-dockerize-react-app)
   
 #
 
@@ -60,6 +72,29 @@ src
 |
 |-- utils (helper-functions, constants are here)   
 ```
+
+## Description of Component Rendering Hierarchy
+```text
+                     index.html
+                         |
+                         |
+                      index.tsx
+                         |
+                         |
+                       App.tsx
+                         |
+                         |
+                   MainLayout.tsx  
+(MainLayout renders differnt screen-component as {children} 
+      according to route setup | screen-component 
+        renders sceen specific page-components)
+                         |
+                         |
+        ----------------------------------
+        |                |               |
+HeaderComponent.tsx  {children} FooterComponent.tsx
+```
+
 ## How to Create a Similar Project By Yourself
 
 ### Step-1: Command for Creating TypeScript-React App
@@ -128,3 +163,6 @@ Example: [App.tsx](./src/App.tsx)
 
 ### Step-9: Backend API integration
 You will found fake store api here: [https://fakestoreapi.com/docs](https://fakestoreapi.com/docs)
+
+## How to Dockerize React App
+Comming soon on my blog: [https://mukitul-islam.blogspot.com/](https://mukitul-islam.blogspot.com/)
