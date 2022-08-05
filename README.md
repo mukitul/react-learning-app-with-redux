@@ -1,5 +1,14 @@
 # Getting Started with React-TypeScript App with Redux & Tailwind CSS
 
+## OUTLINE
+- [How To Run This Project](#how-to-run-this-project)
+- [Version Notes](#version-notes)
+- [FAQ: Difference between - npm install & npm ci](#faq-difference-between-npm-install--npm-ci)
+- [Description of Folder Structure](#description-of-folder-structure)
+- [How to Create a Similar Project By Yourself](#how-to-create-a-similar-project-by-yourself)
+  
+#
+
 ## How To Run This Project
 
 1. Clone this repository `git clone https://github.com/mukitul/react-learning-app-with-redux.git`
@@ -7,6 +16,11 @@
 3. Run `npm ci` [It will install exact version of required libraries and store in node_modules folder]
 4. Run `npm start`
 5. Project will be launch here : [http://localhost:3004](http://localhost:3420)
+
+
+## Version Notes
+- `React v18`, `Router v6`, `TypeScript v4`
+
 
 ## FAQ: Difference between `npm install` & `npm ci`
 
@@ -110,3 +124,6 @@ Example: [index.tsx](./src/index.tsx)
 
 ### Step-8: Setup Routing of different component
 Example: [App.tsx](./src/App.tsx)
+
+### Step-9: Backend API integration
+You will found fake store api here: [https://fakestoreapi.com/docs](https://fakestoreapi.com/docs)
